@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>أعمالنا — Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;600;800;900&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="portfolio.html">
+<div id="slot-header"></div>
+
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
+    <em style="font-style:normal" data-ar="الأعمال" data-en="Work">الأعمال</em></div>
+  <p class="eyebrow" data-ar="أعمال مختارة" data-en="Selected Works">أعمال مختارة</p>
+  <h1 class="display h1" data-ar="أعمالنا" data-en="OUR WORK">أعمالنا</h1>
+  <p class="lead" data-ar="أكثر من 100 مشروع منذ 2014 بين الأفلام والإعلانات التجارية والدراما والكليبات والبرامج التلفزيونية والموشن جرافيك."
+     data-en="Over 100 projects since 2014 across film, commercials, drama, music clips, TV programs and motion graphics.">
+    أكثر من 100 مشروع منذ 2014 بين الأفلام والإعلانات التجارية والدراما والكليبات والبرامج التلفزيونية والموشن جرافيك.</p>
+</div></section>
+
+<section style="padding-bottom:clamp(70px,10vw,130px)"><div class="wrap">
+  <div class="filters rev" data-filters="#mosaic" style="margin-bottom:38px"></div>
+  <div class="mosaic" id="mosaic"></div>
+  <div class="rev" style="margin-top:48px;text-align:center">
+    <button class="btn" id="more" data-ar="عرض المزيد" data-en="Load more">عرض المزيد</button>
+    <p class="muted" style="margin-top:16px;font-size:12.5px"
+       data-ar="— النموذج يعرض 8 مشاريع، والموقع الحقيقي سيعرض الـ26 كلها من قاعدة البيانات"
+       data-en="— The mockup shows 8 projects; the live site will show all 26 from the database">
+      — النموذج يعرض 8 مشاريع، والموقع الحقيقي سيعرض الـ26 كلها من قاعدة البيانات</p>
+  </div>
+</div></section>
+
+<div data-slot="marquee"></div>
+<div data-slot="cta"></div>
+<div id="slot-footer"></div>
+
+<script src="assets/site.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const sizes=['s-lg','s-md','s-wd','s-wd','s-md','s-md','s-wd','s-wd'];
+  document.getElementById('mosaic').innerHTML =
+    PROJECTS.map((p,i)=>tile(p,sizes[i%sizes.length])).join('');
+  document.getElementById('more').onclick=e=>{
+    e.target.textContent = document.documentElement.lang==='ar' ? 'لا توجد مشاريع أخرى' : 'No more projects';
+    e.target.disabled=true; e.target.style.opacity=.5;
+  };
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>من نحن — Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;600;800;900&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.about-hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;overflow:hidden}
+.about-hero .bgimg{position:absolute;inset:0;z-index:0}
+.about-hero .bgimg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.7) brightness(.42)}
+.about-hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(6,6,7,.97),rgba(6,6,7,.3))}
+.about-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(50px,8vw,90px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vm .b{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:34px 28px}
+.vm .b h3{font-size:1.25rem;color:var(--accent2);margin-bottom:12px}
+.vm .b p{color:var(--dim);line-height:2.05;font-style:italic;font-size:14.5px}
+@media(max-width:900px){.split,.vm{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="about.html">
+<div id="slot-header"></div>
+
+<section class="about-hero">
+  <div class="bgimg"><img src="https://blue-network.sa/wp-content/uploads/2022/09/SHOKRAN_MOVIE-1024x683.png" alt=""></div>
+  <div class="in"><div class="wrap">
+    <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
+      <em style="font-style:normal" data-ar="من نحن" data-en="About">من نحن</em></div>
+    <p class="eyebrow" data-ar="عن الاستوديو" data-en="The Studio">عن الاستوديو</p>
+    <h1 class="display h1">
+      <span data-ar="نحن لا نصوّر مشاهد —" data-en="WE DON'T SHOOT SCENES —">نحن لا نصوّر مشاهد —</span><br>
+      <span style="color:var(--accent)" data-ar="نبني عوالم." data-en="WE BUILD WORLDS.">نبني عوالم.</span>
+    </h1>
+  </div></div>
+</section>
+
+<!-- القصة -->
+<section class="sec" style="padding-block:clamp(50px,6vw,80px)"><div class="wrap">
+  <div class="split rev">
+    <div>
+      <p class="eyebrow" data-ar="قصتنا" data-en="Our Story">قصتنا</p>
+      <h2 class="display h2" data-ar="منذ 2014" data-en="Since 2014">منذ 2014</h2>
+    </div>
+    <div>
+      <p class="lead" data-ar="فريق Blue منغمس بشغف في عالم الإنتاج الإبداعي — من التصوير والأفلام الوثائقية إلى الموشن جرافيك والأنيميشن والتصاميم اللافتة. نجمع بين السرد البصري والتفكير الإبداعي الذكي."
+         data-en="Our team has been passionately involved in creative production — from shoots and documentaries to motion graphics, animation and striking design. We combine visual storytelling with smart creative thinking.">
+        فريق Blue منغمس بشغف في عالم الإنتاج الإبداعي — من التصوير والأفلام الوثائقية إلى الموشن جرافيك والأنيميشن والتصاميم اللافتة. نجمع بين السرد البصري والتفكير الإبداعي الذكي.</p>
+      <p class="lead" style="margin-top:22px" data-ar="عملنا على أكثر من 100 مشروع متنوّع. وسواء كان عملاً إنتاجياً متكاملاً أو قطعة جرافيك مميزة، نحوّل الأفكار إلى واقع يصل إلى الناس ويُلهمهم."
+         data-en="We have worked on over 100 diverse projects. Whether a full-scale production or a standout graphic piece, we bring ideas to life in ways that connect and inspire.">
+        عملنا على أكثر من 100 مشروع متنوّع. وسواء كان عملاً إنتاجياً متكاملاً أو قطعة جرافيك مميزة، نحوّل الأفكار إلى واقع يصل إلى الناس ويُلهمهم.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="stats rev">
+  <div class="stat"><b>100+</b><span data-ar="مشروع منفّذ" data-en="Projects delivered">مشروع منفّذ</span></div>
+  <div class="stat"><b>12</b><span data-ar="سنة خبرة" data-en="Years of experience">سنة خبرة</span></div>
+  <div class="stat"><b>02</b><span data-ar="مكتب — الرياض وإسطنبول" data-en="Offices — Riyadh & Istanbul">مكتب — الرياض وإسطنبول</span></div>
+  <div class="stat"><b>09</b><span data-ar="خدمة إنتاجية" data-en="Production services">خدمة إنتاجية</span></div>
+</section>
+
+<section class="sec" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="rev" style="margin-bottom:clamp(30px,4vw,52px)">
+    <p class="eyebrow" data-ar="ما يحرّكنا" data-en="What drives us">ما يحرّكنا</p>
+  </div>
+  <div class="vm rev">
+    <div class="row">
+      <div class="side">
+        <span class="lbl" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</span>
+      </div>
+      <p class="tx" data-ar="نطمح إلى إنتاج أعمال فنية سمعية وبصرية متميزة ومُلهمة، ذات أثر عالمي ممتد عبر الأجيال." data-en="We aspire to produce outstanding and inspiring audiovisual art with a global and lasting impact that spans generations.">نطمح إلى إنتاج أعمال فنية سمعية وبصرية متميزة ومُلهمة، ذات أثر عالمي ممتد عبر الأجيال.</p>
+    </div>
+    <div class="row">
+      <div class="side">
+        <span class="lbl" data-ar="رسالتنا" data-en="Our Mission">رسالتنا</span>
+      </div>
+      <p class="tx" data-ar="نلتزم بإنتاج أعمال سمعية وبصرية مبتكرة تؤثّر في حياة الناس وتُثريها." data-en="We are committed to producing innovative audiovisual works that influence and enrich people’s lives.">نلتزم بإنتاج أعمال سمعية وبصرية مبتكرة تؤثّر في حياة الناس وتُثريها.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- الفريق -->
+<section class="sec"><div class="wrap">
+  <div class="rev" style="margin-bottom:42px">
+    <p class="eyebrow" data-ar="الفريق" data-en="The Team">الفريق</p>
+    <h2 class="display h2" data-ar="الوجوه خلف الكاميرا" data-en="The faces behind the camera">الوجوه خلف الكاميرا</h2>
+  </div>
+  <div class="team rev" id="team"></div>
+  <p class="muted rev" style="margin-top:20px;font-size:12.5px"
+     data-ar="— صور مؤقتة، ستُستبدل بصور الفريق الحقيقية من لوحة التحكم"
+     data-en="— Placeholder images, to be replaced from the dashboard">
+    — صور مؤقتة، ستُستبدل بصور الفريق الحقيقية من لوحة التحكم</p>
+</div></section>
+
+<!-- العملاء -->
+<section class="sec" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="rev" style="margin-bottom:42px">
+    <p class="eyebrow" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</p>
+    <h2 class="display h2" data-ar="من وثقوا بنا" data-en="Who trusted us">من وثقوا بنا</h2>
+  </div>
+  <div class="logos rev" id="logos"></div>
+</div></section>
+
+<div data-slot="cta"></div>
+<div id="slot-footer"></div>
+
+<script src="assets/site.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const TEAM=[
+    {ar:'المخرج التنفيذي',en:'Executive Director',img:WP+'2022/09/SHOKRAN_MOVIE-1024x683.png'},
+    {ar:'مدير التصوير',en:'Director of Photography',img:WP+'2025/05/Medical_Drama.jpg'},
+    {ar:'مدير الإبداع',en:'Creative Director',img:WP+'2025/05/Asrarco_Home.jpg'},
+    {ar:'رئيس المونتاج',en:'Head of Post',img:WP+'2022/09/04_Se7a_PLUS-1-1024x683.png'}
+  ];
+  document.getElementById('team').innerHTML = TEAM.map((m,i)=>
+    `<div class="member"><img src="${m.img}" alt="" loading="lazy">
+      <span class="nm"><b>—</b><span data-ar="${m.ar}" data-en="${m.en}">${m.ar}</span></span></div>`).join('');
+
+  document.getElementById('logos').innerHTML = CLIENTS.map(c=>`<div>${c}</div>`).join('');
+});
+</script>
+</body>
+</html>

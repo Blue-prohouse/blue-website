@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>المدونة — Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;600;800;900&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.feat{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(26px,4vw,52px);align-items:center;
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);
+  transition:.5s var(--ease)}
+.feat:hover{border-color:rgba(47,143,224,.5)}
+.feat .ph{aspect-ratio:16/10;overflow:hidden}
+.feat .ph img{width:100%;height:100%;object-fit:cover;transition:.9s var(--ease)}
+.feat:hover .ph img{transform:scale(1.05)}
+.feat .bd{padding:clamp(26px,3vw,44px) clamp(26px,3vw,44px) clamp(26px,3vw,44px) 0}
+html[lang="en"] .feat .bd{padding:clamp(26px,3vw,44px) 0 clamp(26px,3vw,44px) clamp(26px,3vw,44px)}
+.feat h2{font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.5;margin-bottom:14px}
+.feat p{color:var(--dim);line-height:2;font-size:14.5px}
+.badge{display:inline-block;background:rgba(47,143,224,.16);color:var(--accent2);font-size:11px;
+  letter-spacing:.12em;padding:5px 12px;border-radius:30px;margin-bottom:16px}
+.catbar{display:flex;gap:5px;background:rgba(255,255,255,.055);padding:6px;border-radius:12px;flex-wrap:wrap;
+  margin-bottom:38px}
+.catbar button{background:none;border:0;color:#9c9ca4;font-size:13px;padding:8px 15px;border-radius:8px;
+  transition:.3s}
+.catbar button.on{background:rgba(255,255,255,.1);color:var(--accent2)}
+@media(max-width:860px){
+  .feat{grid-template-columns:1fr}
+  .feat .bd,html[lang="en"] .feat .bd{padding:28px}
+}
+</style>
+</head>
+<body data-page="blog.html">
+<div id="slot-header"></div>
+
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
+    <em style="font-style:normal" data-ar="المدونة" data-en="Blog">المدونة</em></div>
+  <p class="eyebrow" data-ar="رؤى ومقالات" data-en="Insights">رؤى ومقالات</p>
+  <h1 class="display h1" data-ar="المدونة" data-en="BLOG">المدونة</h1>
+  <p class="lead" data-ar="أفكار وخبرات وكواليس من داخل بيت الإنتاج — وما تعلّمناه من أكثر من 100 مشروع."
+     data-en="Ideas, know-how and behind-the-scenes from our production floor — and what we learned from 100+ projects.">
+    أفكار وخبرات وكواليس من داخل بيت الإنتاج — وما تعلّمناه من أكثر من 100 مشروع.</p>
+</div></section>
+
+<section style="padding-bottom:clamp(50px,7vw,80px)"><div class="wrap">
+  <a class="feat rev" href="article.html">
+    <span class="ph"><img src="https://blue-network.sa/wp-content/uploads/2025/05/Asrarco_Home.jpg" alt=""></span>
+    <span class="bd">
+      <span class="badge" data-ar="مقال مميّز" data-en="FEATURED">مقال مميّز</span>
+      <h2 data-ar="كم تكلفة إنتاج فيديو إعلاني في السعودية؟ دليل الأسعار 2026"
+          data-en="How much does a commercial video cost in Saudi Arabia? 2026 pricing guide">
+        كم تكلفة إنتاج فيديو إعلاني في السعودية؟ دليل الأسعار 2026</h2>
+      <p data-ar="تفصيل واقعي لبنود التكلفة — من أجور الفريق والمعدّات إلى المواقع وما بعد الإنتاج — مع نطاقات أسعار حقيقية لثلاثة مستويات من الإنتاج."
+         data-en="A realistic breakdown of cost items — crew, equipment, locations and post — with real price ranges across three production tiers.">
+        تفصيل واقعي لبنود التكلفة — من أجور الفريق والمعدّات إلى المواقع وما بعد الإنتاج — مع نطاقات أسعار حقيقية لثلاثة مستويات من الإنتاج.</p>
+      <span class="meta" style="display:flex;gap:12px;font-size:12px;color:var(--dim);margin-top:18px">
+        <span>12 أكتوبر 2026</span><span data-ar="9 دقائق قراءة" data-en="9 min read">9 دقائق قراءة</span></span>
+      <span class="link-line" style="margin-top:20px" data-ar="اقرأ المقال" data-en="Read article">اقرأ المقال</span>
+    </span>
+  </a>
+</div></section>
+
+<section style="padding-bottom:clamp(70px,10vw,130px)"><div class="wrap">
+  <div class="catbar rev" id="catbar"></div>
+  <div class="posts rev" id="posts"></div>
+</div></section>
+
+<div data-slot="marquee"></div>
+<div data-slot="cta"></div>
+<div id="slot-footer"></div>
+
+<script src="assets/site.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const BCATS=[{k:'all',ar:'الكل',en:'All'},{k:'tips',ar:'نصائح الإنتاج',en:'Production Tips'},
+    {k:'mkt',ar:'التسويق بالفيديو',en:'Video Marketing'},{k:'motion',ar:'موشن وأنيميشن',en:'Motion'},
+    {k:'bts',ar:'من الكواليس',en:'Behind the Scenes'}];
+
+  const POSTS=[
+   {k:'tips',ar:'كيف تختار شركة إنتاج فيديو لمشروعك؟',en:'How to choose a video production company',
+    car:'نصائح الإنتاج',cen:'Production Tips',d:'12 أكتوبر 2026',r:'6',
+    exar:'خمسة معايير عملية تساعدك على تقييم أي شركة إنتاج قبل التوقيع، من الشوريل إلى طريقة إدارة الميزانية.',
+    exen:'Five practical criteria to evaluate any production house before you sign.',
+    img:WP+'2022/09/04_Se7a_PLUS-1-1024x683.png'},
+   {k:'mkt',ar:'لماذا يتفوّق الفيديو على الصورة في حملات السوشيال؟',en:'Why video outperforms stills on social',
+    car:'التسويق بالفيديو',cen:'Video Marketing',d:'28 سبتمبر 2026',r:'4',
+    exar:'أرقام من حملات نفّذناها في السوق السعودي توضّح الفرق في التفاعل ومعدّل التحويل.',
+    exen:'Numbers from campaigns we ran in the Saudi market showing the engagement gap.',
+    img:WP+'2022/09/MESH_BLSHAKL-1-1024x683.png'},
+   {k:'bts',ar:'كواليس تصوير «دراما طبية»',en:'Behind the scenes of Medical Drama',
+    car:'من الكواليس',cen:'Behind the Scenes',d:'15 سبتمبر 2026',r:'8',
+    exar:'كيف صوّرنا مستشفى كاملاً في ثلاثة أيام، والدروس التي خرجنا بها في إدارة المواقع.',
+    exen:'How we shot a full hospital in three days and what we learned about location management.',
+    img:WP+'2025/05/Medical_Drama.jpg'},
+   {k:'motion',ar:'متى تختار الموشن جرافيك بدل التصوير؟',en:'When to choose motion graphics over filming',
+    car:'موشن وأنيميشن',cen:'Motion',d:'2 سبتمبر 2026',r:'5',
+    exar:'ثلاث حالات يكون فيها الأنيميشن أسرع وأرخص وأوضح من التصوير الحقيقي.',
+    exen:'Three cases where animation is faster, cheaper and clearer than live action.',
+    img:WP+'2025/04/Trump-copy-1024x782.jpg'},
+   {k:'tips',ar:'ما الذي يجب أن يحتويه موجز المشروع الإبداعي؟',en:'What a creative brief must contain',
+    car:'نصائح الإنتاج',cen:'Production Tips',d:'20 أغسطس 2026',r:'7',
+    exar:'نموذج موجز جاهز يختصر أسابيع من المراجعات ويضمن أن يصل العمل لما تتخيّله.',
+    exen:'A ready brief template that saves weeks of revisions.',
+    img:WP+'2022/09/ID_PROMO-1-1024x683.png'},
+   {k:'mkt',ar:'مقاسات الفيديو لكل منصة في 2026',en:'Video aspect ratios for every platform in 2026',
+    car:'التسويق بالفيديو',cen:'Video Marketing',d:'5 أغسطس 2026',r:'3',
+    exar:'جدول مرجعي سريع بالمقاسات والمدد المثالية لكل منصة.',
+    exen:'A quick reference table of ratios and ideal durations per platform.',
+    img:WP+'2022/09/SHOKRAN_MOVIE-1024x683.png'}
+  ];
+
+  const box=document.getElementById('posts');
+  const render=list=>box.innerHTML=list.map(p=>
+    `<a class="post" href="article.html">
+      <span class="ph"><img src="${p.img}" alt="" loading="lazy"></span>
+      <span class="bd">
+        <span class="meta"><span class="c" data-ar="${p.car}" data-en="${p.cen}">${p.car}</span>
+          <span>${p.d}</span><span data-ar="${p.r} دقائق قراءة" data-en="${p.r} min read">${p.r} دقائق قراءة</span></span>
+        <h3 data-ar="${p.ar}" data-en="${p.en}">${p.ar}</h3>
+        <p data-ar="${p.exar}" data-en="${p.exen}">${p.exar}</p>
+        <span class="link-line" data-ar="اقرأ المزيد" data-en="Read more">اقرأ المزيد</span>
+      </span></a>`).join('');
+  render(POSTS);
+
+  const bar=document.getElementById('catbar');
+  bar.innerHTML=BCATS.map((c,i)=>
+    `<button class="${i===0?'on':''}" data-k="${c.k}" data-ar="${c.ar}" data-en="${c.en}">${c.ar}</button>`).join('');
+  bar.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    bar.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+    render(b.dataset.k==='all'?POSTS:POSTS.filter(p=>p.k===b.dataset.k));
+    if(window.applyLang) window.applyLang();
+  });
+});
+</script>
+</body>
+</html>

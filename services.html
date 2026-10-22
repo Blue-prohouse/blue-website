@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>خدماتنا — Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;600;800;900&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+</head>
+<body data-page="services.html">
+<div id="slot-header"></div>
+
+<section class="phead"><div class="wrap">
+  <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
+    <em style="font-style:normal" data-ar="الخدمات" data-en="Services">الخدمات</em></div>
+  <p class="eyebrow" data-ar="خدماتنا" data-en="Our Services">خدماتنا</p>
+  <h1 class="display h1" data-ar="ندعمك في كل خطوة من رحلة الإنتاج" data-en="WE SUPPORT YOU ALONG THE PRODUCTION JOURNEY">ندعمك في كل خطوة من رحلة الإنتاج</h1>
+  <p class="lead" data-ar="من الفكرة الأولى إلى النسخة النهائية — فريق واحد يغطي مراحل الإنتاج الثلاث، فلا تحتاج إلى التنسيق بين أكثر من جهة."
+     data-en="From the first idea to the final cut — one team covering all three production stages, so you never coordinate between multiple vendors.">
+    من الفكرة الأولى إلى النسخة النهائية — فريق واحد يغطي مراحل الإنتاج الثلاث، فلا تحتاج إلى التنسيق بين أكثر من جهة.</p>
+</div></section>
+
+<section style="padding-bottom:clamp(60px,9vw,110px)"><div class="wrap">
+  <div id="phases"></div>
+</div></section>
+
+
+<!-- مراحل العمل -->
+<section class="sec"><div class="wrap">
+  <div class="rev" style="margin-bottom:40px">
+    <p class="eyebrow" data-ar="كيف نعمل" data-en="How we work">كيف نعمل</p>
+    <h2 class="display h2" data-ar="أربع مراحل واضحة" data-en="Four clear stages">أربع مراحل واضحة</h2>
+  </div>
+  <div class="steps rev">
+    <div class="step"><span class="k">—</span>
+      <h4 data-ar="الاكتشاف" data-en="Discovery">الاكتشاف</h4>
+      <p data-ar="جلسة نفهم فيها هدفك وجمهورك وميزانيتك، ونخرج منها بموجز إبداعي مكتوب."
+         data-en="A session to understand your goal, audience and budget, ending with a written creative brief.">
+        جلسة نفهم فيها هدفك وجمهورك وميزانيتك، ونخرج منها بموجز إبداعي مكتوب.</p></div>
+    <div class="step"><span class="k">—</span>
+      <h4 data-ar="التصوّر" data-en="Concept">التصوّر</h4>
+      <p data-ar="سيناريو ولوح تصوير وعرض سعر تفصيلي قبل أي التزام."
+         data-en="Script, storyboard and a detailed quote before any commitment.">
+        سيناريو ولوح تصوير وعرض سعر تفصيلي قبل أي التزام.</p></div>
+    <div class="step"><span class="k">—</span>
+      <h4 data-ar="التنفيذ" data-en="Production">التنفيذ</h4>
+      <p data-ar="التصوير بجدول معتمد، مع تقارير يومية ومراجعة مستمرة معك."
+         data-en="Shooting on an approved schedule with daily reports and continuous review.">
+        التصوير بجدول معتمد، مع تقارير يومية ومراجعة مستمرة معك.</p></div>
+    <div class="step"><span class="k">—</span>
+      <h4 data-ar="التسليم" data-en="Delivery">التسليم</h4>
+      <p data-ar="جولتا تعديل مجانيتان، وتسليم بكل المقاسات التي تحتاجها لكل منصة."
+         data-en="Two free revision rounds, delivered in every aspect ratio each platform needs.">
+        جولتا تعديل مجانيتان، وتسليم بكل المقاسات التي تحتاجها لكل منصة.</p></div>
+  </div>
+</div></section>
+
+<!-- أعمال -->
+<section class="sec" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="shead rev">
+    <div>
+      <p class="eyebrow" data-ar="نماذج" data-en="Samples">نماذج</p>
+      <h2 class="display h2" data-ar="شاهد الخدمات في العمل" data-en="See the services at work">شاهد الخدمات في العمل</h2>
+    </div>
+  </div>
+  <div class="mosaic rev" id="mosaic"></div>
+</div></section>
+
+<div data-slot="cta"></div>
+<div id="slot-footer"></div>
+
+<script src="assets/site.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  /* الخدمات: مجموعات بسطور مطوّرة */
+  document.getElementById('phases').innerHTML = PHASES.map((ph,gi)=>`
+    <div class="svc-group rev">
+      <div class="svc-head">
+        <h3 data-ar="${ph.ar}" data-en="${ph.en}">${ph.ar}</h3><span class="ln"></span>
+      </div>
+      <p class="svc-note" data-ar="${ph.note_ar}" data-en="${ph.note_en}">${ph.note_ar}</p>
+      <div class="svc-list">
+        ${ph.items.map((sv,i)=>`
+          <a class="svc-row" href="service-motion.html" data-img="${PROJECTS[(gi*3+i)%PROJECTS.length].img}">
+            <span class="t" data-ar="${sv.ar}" data-en="${sv.en}">${sv.ar}</span>
+            <span class="go" data-ar="التفاصيل ←" data-en="DETAILS →">التفاصيل ←</span>
+          </a>`).join('')}
+      </div>
+    </div>`).join('');
+
+  /* معاينة صورة تتبع المؤشر */
+  const peek=document.createElement('div');
+  peek.className='svc-peek'; peek.innerHTML='<img alt="">';
+  document.body.appendChild(peek);
+  const pimg=peek.querySelector('img');
+  document.querySelectorAll('.svc-row').forEach(r=>{
+    r.addEventListener('mouseenter',()=>{ pimg.src=r.dataset.img; peek.classList.add('on'); });
+    r.addEventListener('mouseleave',()=>peek.classList.remove('on'));
+  });
+  let px=0,py=0,tx=0,ty=0;
+  addEventListener('mousemove',e=>{tx=e.clientX+150;ty=e.clientY});
+  (function p(){px+=(tx-px)*.12;py+=(ty-py)*.12;
+    peek.style.left=px+'px';peek.style.top=py+'px';requestAnimationFrame(p)})();
+
+  const sizes=['s-wd','s-wd','s-md','s-md','s-md'];
+  document.getElementById('mosaic').innerHTML =
+    PROJECTS.slice(0,5).map((p,i)=>tile(p,sizes[i])).join('');
+
+  if(window.applyLang) window.applyLang();
+});
+</script>
+</body>
+</html>
