@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة التحكم — Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ══════ شاشة الدخول ══════ -->
+<div class="login" id="login">
+  <form class="login-box" id="loginForm">
+    <img src="../assets/logo-full.svg" alt="Blue">
+    <h1>لوحة التحكم</h1>
+    <p class="sub">سجّل دخولك للمتابعة</p>
+    <div class="err" id="loginErr"></div>
+    <div class="field">
+      <label>البريد الإلكتروني</label>
+      <input class="inp" type="email" id="email" required autocomplete="username" dir="ltr">
+    </div>
+    <div class="field">
+      <label>كلمة المرور</label>
+      <input class="inp" type="password" id="pass" required autocomplete="current-password" dir="ltr">
+    </div>
+    <button class="btn full" type="submit" id="loginBtn" style="margin-top:8px">دخول</button>
+  </form>
+</div>
+
+<!-- ══════ اللوحة ══════ -->
+<div class="app" id="app">
+  <aside id="aside">
+    <div class="brand"><img src="../assets/logo-full.svg" alt="Blue"></div>
+    <nav class="side" id="nav"></nav>
+    <div class="foot">
+      <div class="who" id="who"></div>
+      <button class="btn ghost sm full" id="logout">تسجيل الخروج</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="phead">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <div><h2 id="pTitle">—</h2><p id="pSub"></p></div>
+      </div>
+      <div class="tools" id="pTools"></div>
+    </div>
+    <div id="view"><div class="loading"><span class="spin"></span></div></div>
+  </main>
+</div>
+
+<!-- ══════ النافذة ══════ -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="mTitle">—</h3>
+      <button class="x" id="mX">&times;</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+    <div class="modal-foot">
+      <button class="btn" id="mSave">حفظ</button>
+      <button class="btn ghost" id="mCancel">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../assets/config.js"></script>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
