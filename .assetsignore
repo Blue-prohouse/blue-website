@@ -1,0 +1,10 @@
+.git
+.github
+supabase
+README.md
+.gitattributes
+.gitignore
+vercel.json
+wrangler.jsonc
+.assetsignore
+index-v2.html

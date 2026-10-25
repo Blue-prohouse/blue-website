@@ -1,0 +1,9 @@
+{
+  // Blue — إعدادات النشر على Cloudflare Workers (موقع ثابت)
+  "name": "blue-website",
+  "compatibility_date": "2026-10-25",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}
