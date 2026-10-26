@@ -13,17 +13,17 @@
 <div id="slot-header"></div>
 
 <section class="sec cwrap"><div class="wrap">
+
+  <div class="chead rev">
+    <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
+      <em style="font-style:normal" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</em></div>
+    <p class="eyebrow" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</p>
+  </div>
+
   <div class="cgrid">
 
-    <!-- العمود الأول: العنوان وبيانات التواصل -->
+    <!-- العمود الأول: بيانات التواصل -->
     <aside class="cside rev">
-      <div class="crumbs"><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a><span>/</span>
-        <em style="font-style:normal" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</em></div>
-      <p class="eyebrow" data-ar="تواصل معنا" data-en="Contact us">تواصل معنا</p>
-      <h1 class="display h1 cttl"
-          data-ar="يسعدنا تواصلكم لبدء قصة نجاح جديدة معًا"
-          data-en="LET'S START A NEW SUCCESS STORY TOGETHER">يسعدنا تواصلكم لبدء قصة نجاح جديدة معًا</h1>
-
       <div class="cinfo">
         <div class="irow">
           <span class="ic">
@@ -74,9 +74,7 @@
         </div>
       </div>
 
-      <div class="cmap" aria-hidden="true">
-        <span data-ar="[ خريطة الموقع — Google Maps ]" data-en="[ Location map — Google Maps ]">[ خريطة الموقع — Google Maps ]</span>
-      </div>
+      <div class="cmap" id="cmap" hidden></div>
     </aside>
 
     <!-- العمود الثاني: النموذج -->
@@ -129,12 +127,33 @@
     </div>
 
   </div>
+
+  <h1 class="display h1 cttl full rev"
+      data-ar="يسعدنا تواصلكم لبدء قصة نجاح جديدة معًا"
+      data-en="LET'S START A NEW SUCCESS STORY TOGETHER">يسعدنا تواصلكم لبدء قصة نجاح جديدة معًا</h1>
+
 </div></section>
 
 <div id="slot-footer"></div>
 
+<script src="assets/config.js"></script>
 <script src="assets/site.js"></script>
 <script>
+/* الخريطة تظهر فقط عند إضافة رابط من لوحة التحكم */
+(async()=>{
+  try{
+    const r=await fetch(`${window.SB_URL}/rest/v1/settings?key=eq.contact&select=value`,
+      {headers:{apikey:window.SB_KEY,Authorization:'Bearer '+window.SB_KEY}});
+    if(!r.ok) return;
+    const url=((await r.json())[0]||{}).value?.map_embed;
+    if(!url) return;
+    const box=document.getElementById('cmap');
+    box.innerHTML=`<iframe src="${url}" loading="lazy" allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade" title="موقعنا على الخريطة"></iframe>`;
+    box.hidden=false;
+  }catch(e){}
+})();
+
 document.addEventListener('DOMContentLoaded',()=>{
   const form=document.getElementById('f1');
   form.addEventListener('submit',e=>{e.preventDefault();form.style.display='none';

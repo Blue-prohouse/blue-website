@@ -663,7 +663,9 @@ const SETTING_FIELDS = [
     { n:'phone',    label:'رقم الهاتف', dir:'ltr' },
     { n:'whatsapp', label:'واتساب', dir:'ltr', hint:'بصيغة دولية بدون + مثل 9665xxxxxxxx' },
     { n:'address_ar', label:'العنوان (عربي)' },
-    { n:'address_en', label:'العنوان (إنجليزي)', dir:'ltr' }
+    { n:'address_en', label:'العنوان (إنجليزي)', dir:'ltr' },
+    { n:'map_embed', label:'رابط الخريطة (Google Maps)', dir:'ltr', t:'textarea',
+      hint:'افتح الموقع على خرائط جوجل ← مشاركة ← تضمين خريطة ← انسخ قيمة src من داخل الكود. اتركه فارغاً لإخفاء الخريطة من صفحة التواصل.' }
   ]},
   { key:'social', label:'روابط التواصل الاجتماعي', fields:[
     { n:'instagram', label:'إنستغرام', dir:'ltr' },
