@@ -272,8 +272,10 @@ function go(k) {
   $('#pTitle').textContent = s.label;
   $('#pSub').textContent = s.desc || '';
   $('#pTools').innerHTML = (s.table && !s.readonly)
-    ? `<button class="btn" id="addBtn">+ إضافة</button>` : '';
+    ? (k === 'projects' ? `<button class="btn ghost" id="impBtn">استيراد من فيديو</button>` : '') +
+      `<button class="btn" id="addBtn">+ إضافة</button>` : '';
   if ($('#addBtn')) $('#addBtn').onclick = () => openForm(k, null);
+  if ($('#impBtn')) $('#impBtn').onclick = () => openImport();
   $('#view').innerHTML = '<div class="loading"><span class="spin"></span></div>';
   if (s.custom === 'dash')      renderDash();
   else if (s.custom === 'settings') renderSettings();
@@ -577,7 +579,10 @@ async function save(k, row) {
   closeModal(); renderList(k);
 }
 
-function closeModal() { $('#modal').classList.remove('on'); $('#mBody').innerHTML = ''; }
+function closeModal() {
+  $('#modal').classList.remove('on'); $('#mBody').innerHTML = '';
+  $('#mSave').style.display = ''; $('#mSave').textContent = 'حفظ';
+}
 $('#mX').onclick = closeModal;
 $('#mCancel').onclick = closeModal;
 $('#modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
@@ -781,3 +786,126 @@ window.addEventListener('hashchange', () => {
   if (user && k && k !== current) go(k);
 });
 boot();
+
+/* ═══════════════════════════════════════════════════════════
+   استيراد مشاريع من روابط Vimeo / YouTube
+   ═══════════════════════════════════════════════════════════ */
+function parseVideo(url) {
+  url = url.trim();
+  if (!url) return null;
+  let m;
+  if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/)))
+    return { kind:'vimeo', id:m[1], url:`https://vimeo.com/${m[1]}` };
+  if ((m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/)))
+    return { kind:'yt', id:m[1], url:`https://www.youtube.com/watch?v=${m[1]}` };
+  return null;
+}
+
+async function fetchMeta(v) {
+  const out = { title:'', cover:'', url:v.url, kind:v.kind };
+  if (v.kind === 'yt') {
+    out.cover = `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`;
+    try {
+      const r = await fetch(
+        `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(v.url)}`);
+      if (r.ok) { const j = await r.json(); out.title = j.title || ''; }
+    } catch {}
+  } else {
+    try {
+      const r = await fetch(
+        `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(v.url)}&width=1600`);
+      if (r.ok) {
+        const j = await r.json();
+        out.title = j.title || '';
+        out.cover = (j.thumbnail_url || '').replace(/_\d+x\d+(\.\w+)?$/, '_1600');
+      }
+    } catch {}
+  }
+  return out;
+}
+
+let importRows = [];
+
+async function openImport() {
+  await lookup('categories');
+  $('#mTitle').textContent = 'استيراد مشاريع من روابط الفيديو';
+  $('#mBody').innerHTML = `
+    <div class="field">
+      <label>روابط الفيديوهات</label>
+      <textarea class="inp" id="impLinks" dir="ltr" rows="9"
+        placeholder="https://vimeo.com/123456789&#10;https://youtu.be/xxxxxxxxxxx&#10;..."></textarea>
+      <div class="hint">رابط واحد في كل سطر. يدعم Vimeo و YouTube.
+        سأجلب العنوان وصورة الغلاف من كل رابط تلقائياً.</div>
+    </div>
+    <button class="btn ghost" id="impFetch">جلب البيانات</button>
+    <div id="impOut" style="margin-top:20px"></div>`;
+  $('#modal').classList.add('on');
+  $('#mSave').style.display = 'none';
+  $('#impFetch').onclick = doFetch;
+}
+
+async function doFetch() {
+  const btn = $('#impFetch');
+  const links = $('#impLinks').value.split('\n').map(parseVideo).filter(Boolean);
+  if (!links.length) return toast('لم أجد أي رابط صالح.', 'bad');
+
+  btn.disabled = true; btn.innerHTML = '<span class="spin"></span> جاري الجلب…';
+  importRows = [];
+  for (const v of links) importRows.push(await fetchMeta(v));
+  btn.disabled = false; btn.textContent = 'جلب البيانات';
+
+  const cats = cache['categories'] || [];
+  $('#impOut').innerHTML = `
+    <div class="tbl-wrap"><table>
+      <thead><tr><th></th><th>العنوان</th><th>التصنيف</th><th>السنة</th><th></th></tr></thead>
+      <tbody>${importRows.map((r, i) => `<tr data-i="${i}">
+        <td><img class="thumb" src="${esc(r.cover)}"
+             onerror="this.style.visibility='hidden'"></td>
+        <td><input class="inp" data-t="${i}" value="${esc(r.title)}" placeholder="عنوان المشروع"></td>
+        <td><select class="inp" data-c="${i}">
+            <option value="">— بدون —</option>
+            ${cats.map(c => `<option value="${c.id}">${esc(c.name_ar)}</option>`).join('')}
+          </select></td>
+        <td><input class="inp" data-y="${i}" dir="ltr" style="width:80px"
+             value="${new Date().getFullYear()}"></td>
+        <td><button class="icbtn del" data-x="${i}">${ico(I.trash,'')}</button></td>
+      </tr>`).join('')}</tbody></table></div>
+    <button class="btn" id="impGo" style="margin-top:16px">
+      إضافة ${importRows.length} مشروع</button>
+    <div class="hint" style="margin-top:8px">
+      العناوين تُحفظ بالعربية والإنجليزية معاً؛ يمكنك تعديلها لاحقاً من قائمة المشاريع.</div>`;
+
+  $('#impOut').querySelectorAll('[data-x]').forEach(b => b.onclick = () => {
+    importRows.splice(+b.dataset.x, 1);
+    if (importRows.length) doRender(); else $('#impOut').innerHTML = '';
+  });
+  $('#impGo').onclick = doImport;
+}
+const doRender = () => $('#impFetch').click();
+
+async function doImport() {
+  const btn = $('#impGo');
+  const O = $('#impOut');
+  const rows = importRows.map((r, i) => {
+    const t = O.querySelector(`[data-t="${i}"]`).value.trim();
+    return {
+      title_ar: t, title_en: t,
+      slug: slugify(t) || `project-${Date.now()}-${i}`,
+      category_id: O.querySelector(`[data-c="${i}"]`).value || null,
+      year: +O.querySelector(`[data-y="${i}"]`).value || null,
+      cover_url: r.cover || null,
+      video_url: r.url,
+      published: true, sort: i
+    };
+  }).filter(r => r.title_ar);
+
+  if (!rows.length) return toast('اكتب عنواناً لكل مشروع على الأقل.', 'bad');
+
+  btn.disabled = true; btn.innerHTML = '<span class="spin"></span>';
+  const { error } = await sb.from('projects').insert(rows);
+  btn.disabled = false; btn.textContent = 'إضافة';
+  if (error) return toast('تعذّرت الإضافة: ' + error.message, 'bad');
+  toast(`تمت إضافة ${rows.length} مشروع`);
+  $('#mSave').style.display = '';
+  closeModal(); renderList('projects');
+}

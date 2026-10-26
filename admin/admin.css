@@ -192,3 +192,9 @@ td .nothumb{width:62px;height:40px;border-radius:6px;background:var(--card3);
   .tbl-wrap{overflow-x:auto}
   table{min-width:640px}
 }
+
+/* ── زر زيارة الموقع ── */
+.btn.visit{display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-bottom:14px;text-decoration:none}
+.btn.visit svg{width:15px;height:15px;flex-shrink:0}
+.btn.visit:hover{border-color:var(--accent);color:var(--accent2)}
