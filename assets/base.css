@@ -768,7 +768,7 @@ html[lang="en"] .offrow:hover .cc{transform:translateX(10px)}
 /* ───────── تعديلات الجولة 10 — صفحة تواصل معنا (تنسيق جديد) ───────── */
 .cwrap{padding-top:clamp(130px,16vw,190px);padding-bottom:clamp(60px,8vw,110px)}
 .cgrid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
-  gap:clamp(34px,4.6vw,76px);align-items:start}
+  gap:clamp(34px,4.6vw,76px);align-items:stretch}
 
 /* ترويسة الصفحة */
 .chead{margin-bottom:clamp(26px,3.4vw,44px)}
@@ -778,9 +778,11 @@ html[lang="en"] .offrow:hover .cc{transform:translateX(10px)}
 .cside .crumbs{margin-bottom:16px}
 .cttl{font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.28;margin-bottom:clamp(30px,4vw,46px);max-width:14ch}
 
-/* العنوان بعرض الصفحة أسفل العمودين */
-.cttl.full{max-width:none;margin:clamp(54px,7vw,96px) 0 0;text-align:center}
-html[lang="en"] .cttl.full{max-width:none}
+/* العنوان أسفل العمود الجانبي، منتهياً مع حدود بطاقة النموذج */
+.cside{display:flex;flex-direction:column;height:100%}
+.cttl.stick{margin:auto 0 0;padding-top:clamp(34px,4vw,54px);max-width:none;
+  font-size:clamp(1.45rem,2.7vw,2.45rem);line-height:1.3}
+html[lang="en"] .cttl.stick{max-width:none;line-height:1.08}
 html[lang="en"] .cttl{line-height:1.02;max-width:16ch}
 
 .cinfo{display:flex;flex-direction:column;gap:10px}
@@ -823,8 +825,8 @@ html[lang="en"] .cttl{line-height:1.02;max-width:16ch}
 @media(max-width:980px){
   .cgrid{grid-template-columns:1fr;gap:42px}
   .cttl{max-width:none}
-  .cttl.full{text-align:right;margin-top:clamp(40px,8vw,60px)}
-  html[lang="en"] .cttl.full{text-align:left}
+  .cside{height:auto}
+  .cttl.stick{margin-top:0;padding-top:clamp(28px,6vw,40px)}
 }
 @media(max-width:620px){
   .ccard .two{grid-template-columns:1fr}

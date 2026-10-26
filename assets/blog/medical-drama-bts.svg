@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+<defs>
+  <radialGradient id="glow" cx="50%" cy="42%" r="62%">
+    <stop offset="0%" stop-color="#2f8fe0" stop-opacity=".20"/>
+    <stop offset="60%" stop-color="#2f8fe0" stop-opacity=".05"/>
+    <stop offset="100%" stop-color="#2f8fe0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#7bd4ff"/><stop offset="100%" stop-color="#2f8fe0"/>
+  </linearGradient>
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity=".035" stroke-width="1"/>
+  </pattern>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0%" stop-color="#7bd4ff" stop-opacity=".30"/>
+   <stop offset="100%" stop-color="#7bd4ff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1600" height="900" fill="#060607"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<rect width="1600" height="900" fill="url(#glow)"/>
+<!-- مخروط إضاءة -->
+<path d="M760 120 L1180 780 L420 780 Z" fill="url(#beam)"/>
+<rect x="742" y="78" width="116" height="52" rx="10" fill="#15151c"
+      stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+<circle cx="800" cy="138" r="16" fill="#7bd4ff" opacity=".9"/>
+<!-- كلاكيت -->
+<g transform="translate(560,430) rotate(-6)">
+  <rect x="0" y="62" width="480" height="250" rx="16" fill="#101018"
+        stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
+  <rect x="0" y="0" width="480" height="62" rx="10" fill="#15151c"
+        stroke="#ffffff" stroke-opacity=".14" stroke-width="2"/>
+  <path d="M18 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/><path d="M98 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/><path d="M178 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/><path d="M258 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/><path d="M338 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/><path d="M418 0 l40 62 h44 l-40 -62 Z" fill="url(#acc)" opacity=".9"/>
+  <rect x="44" y="118" width="300" height="13" rx="6" fill="#ffffff" opacity=".22"/>
+  <rect x="44" y="156" width="214" height="13" rx="6" fill="#ffffff" opacity=".14"/>
+  <rect x="44" y="194" width="258" height="13" rx="6" fill="#ffffff" opacity=".14"/>
+  <rect x="44" y="232" width="150" height="13" rx="6" fill="#2f8fe0" opacity=".55"/>
+</g>
+<!-- نبضة قلب -->
+<path d="M180 790 H330 l34 -70 l40 150 l44 -118 l30 38 H1420"
+      fill="none" stroke="url(#acc)" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" opacity=".75"/>
+
+<rect x="0" y="880" width="1600" height="20" fill="url(#acc)" opacity=".55"/>
+</svg>
