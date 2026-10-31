@@ -328,17 +328,38 @@ html[lang="ar"] .fcol b{letter-spacing:0;font-size:12px}
 .member .nm b{display:block;font-size:1rem}
 .member .nm span{font-size:12px;color:var(--accent2)}
 
-/* ═══ خط زمني لمراحل العمل ═══ */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:0;
-  border-top:1px solid var(--line)}
-.step{padding:34px 26px 34px 0;border-inline-end:1px solid var(--line);position:relative}
-.step:last-child{border-inline-end:0}
-.step .k{font-family:var(--en);font-size:11px;color:var(--accent);letter-spacing:.2em;margin-bottom:14px;
-  display:block}
-.step h4{font-size:1.1rem;margin-bottom:9px}
-.step p{font-size:13.5px;color:var(--dim);line-height:1.9}
-.step::before{content:"";position:absolute;top:-4px;inset-inline-start:0;width:7px;height:7px;border-radius:50%;
-  background:var(--accent)}
+/* ═══ مراحل العمل: خط واحد يمرّ بأربع مراحل ═══ */
+.stages{list-style:none;position:relative;display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0 clamp(24px,3.2vw,52px);padding-top:46px}
+.stages::before,.stages::after{content:"";position:absolute;top:0;inset-inline:0;height:1px}
+.stages::before{background:var(--line)}
+.stages::after{background:var(--accent);transform-origin:left;transition:transform 1.8s var(--ease)}
+html[dir="rtl"] .stages::after{transform-origin:right}
+.stages.armed:not(.on)::after{transform:scaleX(0)}
+.stage{position:relative}
+.stage::before{content:"";position:absolute;top:-51px;inset-inline-start:0;width:11px;height:11px;
+  border-radius:50%;background:var(--accent);border:1.5px solid var(--accent);
+  transition:background .5s var(--ease),border-color .5s var(--ease);transition-delay:calc(var(--i)*.38s + .15s)}
+.stages.armed:not(.on) .stage::before{background:var(--bg);border-color:#3a3a40}
+.stage-k{font-family:var(--en);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.14em;
+  font-variant-numeric:tabular-nums;margin-inline-end:10px}
+.stage-n{font-size:13px;color:var(--dim)}
+.stage-p{font-size:clamp(1.2rem,1.75vw,1.55rem);line-height:1.5;font-weight:700;color:var(--fg);
+  margin:16px 0 12px;text-wrap:balance}
+html[lang="en"] .stage-p{letter-spacing:-.01em;line-height:1.3}
+.stage-d{font-size:14px;line-height:1.9;color:var(--dim);max-width:30ch}
+.stages-more{display:flex;gap:clamp(22px,3vw,40px);align-items:center;flex-wrap:wrap;margin-top:clamp(48px,6vw,72px)}
+.stages-more .link-line.quiet{color:var(--dim)}
+.stages-more .link-line.quiet:hover{color:var(--accent2)}
+@media(max-width:900px){
+  .stages{grid-template-columns:1fr;gap:38px;padding-top:0;padding-inline-start:34px}
+  .stages::before,.stages::after{inset-inline:auto;inset-inline-start:5px;top:6px;bottom:6px;width:1px;height:auto}
+  .stages::after,html[dir="rtl"] .stages::after{transform-origin:top}
+  .stages.armed:not(.on)::after{transform:scaleY(0)}
+  .stage::before{top:4px;inset-inline-start:-34px}
+  .stage-p{margin-top:10px}
+  .stage-d{max-width:46ch}
+}
 
 /* ═══ معرض صور المشروع ═══ */
 .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
@@ -377,8 +398,6 @@ body{padding-bottom:38px}
   .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:152px}
   .s-lg,.s-wd,.s-md{grid-column:span 2;grid-row:span 1}
   .s-lg{grid-row:span 2}
-  .steps{grid-template-columns:1fr}
-  .step{border-inline-end:0;border-bottom:1px solid var(--line)}
 }
 @media(max-width:1180px){
   header.site .mainnav{gap:20px;font-size:13.5px}

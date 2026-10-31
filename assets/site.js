@@ -81,6 +81,27 @@ const PHASES = [
 /* قائمة مسطّحة تُستخدم في الصفحة الرئيسية */
 const SERVICES = PHASES.flatMap(p=>p.items);
 
+/* مراحل العمل الأربع — الوعد هو الأهم، والمرحلة تسمية له.
+   الوعود الأربعة التزامات مؤكَّدة؛ لا تُضَف وعود أو مُدد زمنية بدون تأكيد. */
+const STAGES = [
+ {ar:'الاكتشاف', en:'Discovery',
+  par:'موجز إبداعي مكتوب', pen:'A written creative brief',
+  dar:'جلسة نفهم فيها هدفك وجمهورك وميزانيتك.',
+  den:'A session to understand your goal, audience and budget.'},
+ {ar:'التصوّر', en:'Concept',
+  par:'عرض سعر قبل أي التزام', pen:'A detailed quote before any commitment',
+  dar:'سيناريو ولوح تصوير يوضّح كل لقطة.',
+  den:'A script and a storyboard for every shot.'},
+ {ar:'التنفيذ', en:'Production',
+  par:'تقارير يومية من موقع التصوير', pen:'Daily reports from the shoot',
+  dar:'التصوير بجدول تعتمده أنت، ومراجعة مستمرة معك.',
+  den:'Shooting on a schedule you approve, with continuous review.'},
+ {ar:'التسليم', en:'Delivery',
+  par:'جولتا تعديل مجانيتان', pen:'Two free revision rounds',
+  dar:'وتسليم بكل المقاسات التي تحتاجها كل منصة.',
+  den:'Delivered in every size each platform needs.'}
+];
+
 /* ── الشريط: مجالات العمل بشفافيات متفاوتة ── */
 const FIELDS_AR = ['الإنتاج','الأفلام القصيرة','الجرافيك','الإعلانات التجارية','الدراما',
                    'الموشن جرافيك','المؤثرات البصرية','الهوية البصرية','التصوير','الوثائقيات'];
@@ -184,6 +205,18 @@ function buildMarquee(){
   </section>`;
 }
 
+/* ── مراحل العمل: خط واحد يمرّ بالمراحل الأربع ── */
+function buildStages(){
+  return `<ol class="stages">
+    ${STAGES.map((s,i)=>`<li class="stage" style="--i:${i}">
+      <span class="stage-k">${String(i+1).padStart(2,'0')}</span>
+      <span class="stage-n" data-ar="${s.ar}" data-en="${s.en}">${s.ar}</span>
+      <h3 class="stage-p" data-ar="${s.par}" data-en="${s.pen}">${s.par}</h3>
+      <p class="stage-d" data-ar="${s.dar}" data-en="${s.den}">${s.dar}</p>
+    </li>`).join('')}
+  </ol>`;
+}
+
 /* ── أيقونة الفكرة: علامة استفهام بثلاث شُرَط متدرّجة ── */
 const IDEA_SVG = `<svg class="idea" viewBox="0 0 120 120" fill="none" aria-hidden="true"
   stroke="currentColor" stroke-width="8.6" stroke-linecap="round" stroke-linejoin="round">
@@ -259,6 +292,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(isHome) s.outerHTML=buildMarquee(); else s.remove();
   });
   document.querySelectorAll('[data-slot="logos"]').forEach(s=>s.outerHTML=buildLogos());
+  document.querySelectorAll('[data-slot="stages"]').forEach(s=>s.outerHTML=buildStages());
   document.querySelectorAll('[data-slot="cta"]').forEach(s=>s.outerHTML=buildCTA());
   const fSlot=document.getElementById('slot-footer'); if(fSlot) fSlot.outerHTML=buildFooter();
   document.body.insertAdjacentHTML('beforeend',buildMockbar());
@@ -302,6 +336,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     e.setAttribute('data-obs','1'); io.observe(e);
   });
   window.revealScan();
+  /* خط المراحل يُرسم عند الظهور؛ بدون جافاسكريبت يبقى مرسوماً */
+  document.querySelectorAll('.stages').forEach(s=>{
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    s.classList.add('armed'); io.observe(s);
+  });
   setTimeout(()=>window.revealScan(),0);
   setTimeout(()=>window.revealScan(),250);
 
