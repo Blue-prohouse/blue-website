@@ -341,6 +341,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     s.classList.add('armed'); io.observe(s);
   });
+  /* بيانات الرؤية والرسالة تظهر صفاً صفاً؛ بدون جافاسكريبت تبقى ظاهرة */
+  document.querySelectorAll('.vm-row').forEach(r=>{
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    r.classList.add('armed'); io.observe(r);
+  });
   setTimeout(()=>window.revealScan(),0);
   setTimeout(()=>window.revealScan(),250);
 
