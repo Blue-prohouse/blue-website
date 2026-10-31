@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T13:34:52+00:00",
+  "title": "Design System: Blue",
+  "extensions": {
+    "colorMeta": {
+      "blue-hour": {
+        "role": "primary",
+        "displayName": "Blue Hour",
+        "canonical": "#2f8fe0",
+        "tonalRamp": [
+          "#0c2438",
+          "#154065",
+          "#1f5d92",
+          "#287abe",
+          "#4ea0e5",
+          "#82bcec",
+          "#b6d8f4",
+          "#e6f2fb"
+        ]
+      },
+      "skylight": {
+        "role": "secondary",
+        "displayName": "Skylight",
+        "canonical": "#7bd4ff",
+        "tonalRamp": [
+          "#1f3540",
+          "#375f73",
+          "#508aa6",
+          "#69b4d9",
+          "#8fdaff",
+          "#b0e5ff",
+          "#d1f0ff",
+          "#effaff"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#060607",
+        "tonalRamp": [
+          "#020202",
+          "#030303",
+          "#040405",
+          "#050506",
+          "#2b2b2c",
+          "#6a6a6a",
+          "#a8a8a8",
+          "#e1e1e1"
+        ]
+      },
+      "blackout": {
+        "role": "neutral",
+        "displayName": "Blackout",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000",
+          "#262626",
+          "#666666",
+          "#a6a6a6",
+          "#e0e0e0"
+        ]
+      },
+      "set-floor": {
+        "role": "neutral",
+        "displayName": "Set Floor",
+        "canonical": "#121216",
+        "tonalRamp": [
+          "#040406",
+          "#08080a",
+          "#0c0c0e",
+          "#0f0f13",
+          "#363639",
+          "#717173",
+          "#acacad",
+          "#e3e3e3"
+        ]
+      },
+      "set-floor-lit": {
+        "role": "neutral",
+        "displayName": "Set Floor, Lit",
+        "canonical": "#17171c",
+        "tonalRamp": [
+          "#060607",
+          "#0a0a0d",
+          "#0f0f12",
+          "#141418",
+          "#3a3a3e",
+          "#747477",
+          "#aeaeb0",
+          "#e3e3e4"
+        ]
+      },
+      "gaffer-line": {
+        "role": "neutral",
+        "displayName": "Gaffer Line",
+        "canonical": "#1b1b1f",
+        "tonalRamp": [
+          "#070708",
+          "#0c0c0e",
+          "#121214",
+          "#17171a",
+          "#3d3d41",
+          "#767679",
+          "#afafb1",
+          "#e4e4e4"
+        ]
+      },
+      "key-light": {
+        "role": "neutral",
+        "displayName": "Key Light",
+        "canonical": "#f2f2f0",
+        "tonalRamp": [
+          "#3c3c3c",
+          "#6d6d6c",
+          "#9d9d9c",
+          "#cececc",
+          "#f4f4f2",
+          "#f7f7f6",
+          "#fafafa",
+          "#fdfdfd"
+        ]
+      },
+      "lead-grey": {
+        "role": "neutral",
+        "displayName": "Lead Grey",
+        "canonical": "#c6c6cc",
+        "tonalRamp": [
+          "#323233",
+          "#59595c",
+          "#818185",
+          "#a8a8ad",
+          "#cfcfd4",
+          "#dddde0",
+          "#ebebed",
+          "#f8f8f9"
+        ]
+      },
+      "prose-grey": {
+        "role": "neutral",
+        "displayName": "Prose Grey",
+        "canonical": "#cfcfd4",
+        "tonalRamp": [
+          "#343435",
+          "#5d5d5f",
+          "#87878a",
+          "#b0b0b4",
+          "#d6d6da",
+          "#e2e2e5",
+          "#eeeef0",
+          "#f9f9fa"
+        ]
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "Dim",
+        "canonical": "#8a8a8f",
+        "tonalRamp": [
+          "#222224",
+          "#3e3e40",
+          "#5a5a5d",
+          "#75757a",
+          "#9c9ca0",
+          "#b9b9bc",
+          "#d6d6d8",
+          "#f1f1f2"
+        ]
+      },
+      "footnote": {
+        "role": "neutral",
+        "displayName": "Footnote",
+        "canonical": "#4a4a50",
+        "tonalRamp": [
+          "#121214",
+          "#212124",
+          "#303034",
+          "#3f3f44",
+          "#65656a",
+          "#929296",
+          "#c0c0c2",
+          "#e9e9ea"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-ar": {
+        "displayName": "Display (Arabic)",
+        "purpose": "Page heroes and H1s."
+      },
+      "display-en": {
+        "displayName": "Display (English)",
+        "purpose": "Uppercase title-card H1s in English mode."
+      },
+      "headline-ar": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-section titles."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Intro paragraph under titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Card and step descriptions."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Article body, max 70ch."
+      },
+      "label": {
+        "displayName": "Eyebrow",
+        "purpose": "Section labels led by a blue rule."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Stats and step/service numbers."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-house",
+        "value": "cubic-bezier(.19,1,.22,1)",
+        "purpose": "All reveals, hovers and header transitions."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 1s, transform 1s (translateY 38px → 0)",
+        "purpose": "Content entering on scroll."
+      },
+      {
+        "name": "image-hover",
+        "value": "transform 1.2s, filter .6s",
+        "purpose": "Tile image scale 1.07 and desaturation release."
+      },
+      {
+        "name": "marquee",
+        "value": "46s / 54s linear infinite",
+        "purpose": "Two-line service marquee, opposite directions."
+      },
+      {
+        "name": "grain",
+        "value": "1s steps(4) infinite",
+        "purpose": "Film-grain overlay jitter."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-tight",
+        "value": "1180px"
+      },
+      {
+        "name": "lg",
+        "value": "1000px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "cta-stack",
+        "value": "800px"
+      },
+      {
+        "name": "sm",
+        "value": "760px"
+      }
+    ],
+    "glass": {
+      "header-stuck": "background rgba(6,6,7,.86); backdrop-filter blur(18px); border-bottom 1px rgba(255,255,255,.08)"
+    },
+    "cssRoot": ":host{--bg:#060607;--card:#121216;--card2:#17171c;--fg:#f2f2f0;--dim:#8a8a8f;--line:#1b1b1f;--accent:#2f8fe0;--accent2:#7bd4ff;--ease:cubic-bezier(.19,1,.22,1)}"
+  },
+  "components": [
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Default action: outlined pill that lights up white on hover.",
+      "html": "<button class=\"ds-btn\">شاهد أعمالنا</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.32);border-radius:60px;padding:14px 28px;font:14px 'IBM Plex Sans Arabic',system-ui,sans-serif;background:none;color:#f2f2f0;cursor:pointer;transition:.35s cubic-bezier(.19,1,.22,1)}.ds-btn:hover,.ds-btn:focus-visible{background:#f2f2f0;color:#000;border-color:#f2f2f0;outline:none}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-fill",
+      "description": "The one blue-hour action per view.",
+      "html": "<button class=\"ds-btn-fill\">تواصل معنا</button>",
+      "css": ".ds-btn-fill{display:inline-flex;align-items:center;gap:10px;border:1px solid #2f8fe0;border-radius:60px;padding:14px 28px;font:14px 'IBM Plex Sans Arabic',system-ui,sans-serif;background:#2f8fe0;color:#fff;cursor:pointer;transition:.35s cubic-bezier(.19,1,.22,1)}.ds-btn-fill:hover,.ds-btn-fill:focus-visible{background:#fff;border-color:#fff;color:#000;outline:none}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "link-line",
+      "description": "Leading rule + label; rule grows and text turns skylight on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\" dir=\"rtl\">كل الخدمات</a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:12px;font:600 13.5px 'IBM Plex Sans Arabic',system-ui,sans-serif;color:#f2f2f0;text-decoration:none;transition:color .3s}.ds-link::before{content:'';width:30px;height:1.5px;background:currentColor;transition:width .35s cubic-bezier(.19,1,.22,1)}.ds-link:hover,.ds-link:focus-visible{color:#7bd4ff;outline:none}.ds-link:hover::before{width:46px}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Set-floor surface that lifts and edges blue on hover.",
+      "html": "<div class=\"ds-card\" dir=\"rtl\"><div class=\"ds-ic\"></div><h4>موشن جرافيك</h4><p>فيديوهات تشرح فكرتك في أقل من دقيقة.</p></div>",
+      "css": ".ds-card{max-width:300px;background:#121216;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:32px 26px;color:#f2f2f0;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;transition:.5s cubic-bezier(.19,1,.22,1)}.ds-card:hover{transform:translateY(-5px);border-color:rgba(47,143,224,.45);background:#17171c}.ds-ic{width:46px;height:46px;border-radius:12px;background:rgba(47,143,224,.14);margin-bottom:20px}.ds-card h4{font-size:1.15rem;margin:0 0 10px}.ds-card p{font-size:13.5px;color:#8a8a8f;line-height:1.9;margin:0}"
+    },
+    {
+      "name": "Portfolio Tile",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "Signature: desaturated still that comes to full colour on hover.",
+      "html": "<div class=\"ds-tile\" dir=\"rtl\"><div class=\"ds-img\"></div><div class=\"ds-ov\"><span>إعلانات</span><b>إعلان أسرازكو</b></div></div>",
+      "css": ".ds-tile{position:relative;width:320px;height:200px;overflow:hidden;border-radius:14px;background:#121216;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif}.ds-img{position:absolute;inset:0;background:linear-gradient(135deg,#2a3a4a,#6b4a2f);filter:grayscale(.45) contrast(1.04);transition:transform 1.2s cubic-bezier(.19,1,.22,1),filter .6s}.ds-tile:hover .ds-img{transform:scale(1.07);filter:none}.ds-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(transparent 36%,rgba(0,0,0,.9));color:#f2f2f0}.ds-ov span{font-size:11px;color:#7bd4ff;letter-spacing:.14em;margin-bottom:7px}.ds-ov b{font-size:1.3rem}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Dark field; border turns blue hour on focus.",
+      "html": "<label class=\"ds-field\" dir=\"rtl\"><span>الاسم *</span><input placeholder=\"اسمك الكامل\"></label>",
+      "css": ".ds-field{display:block;max-width:360px;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif}.ds-field span{display:block;font-size:13px;color:#c6c6cc;margin-bottom:9px}.ds-field input{width:100%;box-sizing:border-box;background:#121216;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;color:#f2f2f0;font:inherit;font-size:15px;transition:.3s}.ds-field input:focus{outline:none;border-color:#2f8fe0}"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "refersTo": "nav-quote",
+      "description": "Centred links, blue underline on active, blue-hour quote pill.",
+      "html": "<nav class=\"ds-nav\" dir=\"rtl\"><a class=\"on\">الرئيسية</a><a>من نحن</a><a>الخدمات</a><a>الأعمال</a><button>اطلب عرض سعر</button></nav>",
+      "css": ".ds-nav{display:flex;gap:28px;align-items:center;padding:18px 24px;background:rgba(6,6,7,.86);border-bottom:1px solid rgba(255,255,255,.08);font:14.5px 'IBM Plex Sans Arabic',system-ui,sans-serif;color:#f2f2f0}.ds-nav a{opacity:.78;position:relative;padding-bottom:4px;cursor:pointer;transition:opacity .3s}.ds-nav a:hover,.ds-nav a.on{opacity:1}.ds-nav a.on::after{content:'';position:absolute;inset-inline:0;bottom:0;height:1.5px;background:#2f8fe0}.ds-nav button{margin-inline-start:auto;background:#2f8fe0;border:1px solid #2f8fe0;color:#fff;border-radius:40px;padding:10px 20px;font:600 13px inherit;font-family:inherit;cursor:pointer;transition:.3s}.ds-nav button:hover,.ds-nav button:focus-visible{background:#fff;border-color:#fff;color:#000;outline:none}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Shoot",
+    "overview": "The site is a set after dark. A near-black field (night) holds everything, with a faint film grain drifting over it. Large white Arabic headlines, the work itself, and a single cut of blue hour are what the light falls on. Nothing glows unless it has a reason to: the interface stays in the shadows so that projects, headlines and the next step read like lit subjects in a dark frame.\n\nDensity is low and the pacing is cinematic. Sections breathe with tall vertical padding, content reveals itself as it scrolls into view with a long ease-out, and project imagery sits slightly desaturated until the cursor reaches it and it comes up to full colour. The custom cursor, a dot inside a ring that swells and tints blue over interactive things, makes the pointer feel like a camera operator's focus.\n\nThe system is Arabic-first and right-to-left. English is a full parallel mode with its own type treatment (uppercase, ultra-heavy Archivo display), not a fallback.",
+    "keyCharacteristics": [
+      "Near-black canvas with film grain at 4% opacity; dark mode is the only mode.",
+      "One chromatic accent (blue hour) plus its light partner (skylight); everything else is greyscale.",
+      "Heavy display type: IBM Plex Sans Arabic Bold in Arabic, Archivo Black-weight uppercase in English.",
+      "Pill-shaped buttons, softly rounded cards and tiles, hairline dividers.",
+      "Quiet at rest, lit on interaction: hover is where colour and brightness arrive.",
+      "Long, smooth ease-out motion (`cubic-bezier(.19,1,.22,1)`) on reveals, hovers and the header."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Blue hour is the only chromatic colour in the interface. No second accent, no gradients between hues. If something needs to stand out and blue is already used nearby, use brightness (key light) instead.",
+        "section": "colors"
+      },
+      {
+        "name": "The Skylight Is Ink Rule",
+        "body": "Skylight is for text and small marks on dark surfaces. It never fills a button, card or background.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Scripts Rule",
+        "body": "Arabic and English each get their own type treatment. Arabic display is never uppercase-tracked like English, and English display is never set in the Arabic family. Any new heading style needs both an Arabic and an English rule.",
+        "section": "typography"
+      },
+      {
+        "name": "The Generous Leading Rule",
+        "body": "Arabic running text sits at line-height 1.9–2.05. Don't tighten body or prose below 1.9.",
+        "section": "typography"
+      },
+      {
+        "name": "The Western Numerals Rule",
+        "body": "Large figures (stats, step and service numbers) are set in Archivo, even on Arabic pages.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Shadows On Set Rule",
+        "body": "Never add `box-shadow` for elevation. To lift a surface, step its tone up, brighten its border, or nudge it upward on hover.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Grain Stays On Rule",
+        "body": "The film-grain overlay sits above all content at 4% opacity and is part of the material. Turn it off only for reduced motion.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every screen on night (#060607) with grain on top.",
+      "**Do** use blue hour for exactly one primary action per view, plus small structural marks (rules, numerals, focus).",
+      "**Do** write both an Arabic and an English rule for any new heading or label style.",
+      "**Do** use logical properties so layouts mirror between RTL and LTR.",
+      "**Do** desaturate imagery at rest and bring it to full colour on hover, using the house ease.",
+      "**Do** separate list content with gaffer-line hairlines rather than boxes."
+    ],
+    "donts": [
+      "**Don't** add drop shadows. Depth is tone, border and light.",
+      "**Don't** introduce a second accent hue or a multi-colour gradient.",
+      "**Don't** fill surfaces with skylight. It's for text and small marks.",
+      "**Don't** use square-cornered buttons. Actions are pills.",
+      "**Don't** tighten Arabic running text below line-height 1.9.",
+      "**Don't** add a light theme. The night set is the identity."
+    ]
+  }
+}

@@ -87,17 +87,19 @@ html[lang="ar"] .hero h1 .ln{padding-block:.16em .24em;margin-block:-.16em -.24e
   <div class="stat"><b>09</b><span data-ar="خدمة إنتاجية" data-en="Production services">خدمة إنتاجية</span></div>
 </section>
 
-<div data-slot="marquee"></div>
-
-<!-- الخدمات -->
-<section class="sec"><div class="wrap">
-  <div class="rev">
-    <p class="eyebrow" data-ar="خدماتنا" data-en="Our Services">خدماتنا</p>
-    <h2 class="display h2" data-ar="ندعمك في كل خطوة" data-en="We support you all the way">ندعمك في كل خطوة</h2>
+<!-- مراحل العمل: فريق واحد من الفكرة حتى التسليم -->
+<section class="sec" style="border-top:1px solid var(--line)"><div class="wrap">
+  <div class="rev" style="margin-bottom:clamp(56px,7vw,88px)">
+    <h2 class="display h2" style="max-width:16ch"
+        data-ar="فريق واحد، من الفكرة حتى التسليم" data-en="One team, from idea to delivery">فريق واحد، من الفكرة حتى التسليم</h2>
+    <p class="lead" style="margin-top:22px;max-width:54ch"
+       data-ar="لا تنسيق بين أكثر من جهة. الفريق نفسه يرافق مشروعك في المراحل الأربع، وتعرف مسبقاً ما تحصل عليه في كل مرحلة."
+       data-en="No juggling vendors. The same team carries your project through all four stages, and you know up front what you get at each one.">لا تنسيق بين أكثر من جهة. الفريق نفسه يرافق مشروعك في المراحل الأربع، وتعرف مسبقاً ما تحصل عليه في كل مرحلة.</p>
   </div>
-  <div class="srv-list rev" id="srv" style="margin-top:44px"></div>
-  <div class="rev" style="margin-top:40px">
-    <a href="services.html" class="link-line" data-ar="كل الخدمات" data-en="All services">كل الخدمات</a>
+  <div data-slot="stages"></div>
+  <div class="stages-more">
+    <a href="portfolio.html" class="link-line" data-ar="شاهد أعمالنا" data-en="See the work">شاهد أعمالنا</a>
+    <a href="services.html" class="link-line quiet" data-ar="كل الخدمات" data-en="All services">كل الخدمات</a>
   </div>
 </div></section>
 
@@ -122,10 +124,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   const sizes=['s-lg','s-md','s-wd','s-wd','s-md','s-md'];
   document.getElementById('mosaic').innerHTML =
     PROJECTS.slice(0,6).map((p,i)=>tile(p,sizes[i])).join('');
-
-  document.getElementById('srv').innerHTML = SERVICES.map((s,i)=>
-    `<a class="srv-row" href="service-motion.html"><span class="n">—</span>
-     <span class="t" data-ar="${s.ar}" data-en="${s.en}">${s.ar}</span></a>`).join('');
 
   const POSTS=[
     {ar:'كيف تختار شركة إنتاج فيديو لمشروعك؟',en:'How to choose a video production company',
