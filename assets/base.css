@@ -370,9 +370,6 @@ html[lang="en"] .stage-p{letter-spacing:-.01em;line-height:1.3}
 .vm-row::after{width:clamp(64px,12vw,168px);background:var(--accent);transform-origin:left;
   transition:transform 1.1s var(--ease),width .9s var(--ease)}
 html[dir="rtl"] .vm-row::after{transform-origin:right}
-.vm-side{display:flex;align-items:baseline;gap:14px}
-.vm-k{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.08em;color:#5e5e67;
-  transition:color .5s var(--ease)}
 .vm-l{font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:600;color:var(--fg)}
 .vm-s{font-size:clamp(1.4rem,3vw,2.45rem);font-weight:500;line-height:1.65;color:#9c9ca3;max-width:30ch}
 html[lang="en"] .vm-s{line-height:1.35;letter-spacing:-.01em;max-width:34ch}
@@ -382,7 +379,6 @@ html[lang="en"] .vm-s{line-height:1.35;letter-spacing:-.01em;max-width:34ch}
 html[dir="rtl"] .vm-s em{background-position:right bottom}
 /* هادئ حتى اللمس: الخط يمتد على عرض الصف */
 .vm-row:hover::after{width:100%}
-.vm-row:hover .vm-k{color:var(--accent2)}
 /* حالة ما قبل الظهور — تُفعَّل بالجافاسكريبت فقط */
 .vm-row.armed:not(.on)::after{transform:scaleX(0)}
 .vm-row.armed .vm-side,.vm-row.armed .vm-s{transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
